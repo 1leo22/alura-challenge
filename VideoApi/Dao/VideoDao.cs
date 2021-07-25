@@ -17,5 +17,17 @@ namespace Dao
 		{
 			return _context.Videos;
 		}
+
+		public Video GetVideoById(int id)
+		{
+			IQueryable<Video> query = _context.Videos;
+			return query.Where(video => video.Id == id).FirstOrDefault();
+		}
+
+		public void AddVideo(Video video)
+		{
+			_context.Add(video);
+			_context.SaveChanges();
+		}
 	}
 }
