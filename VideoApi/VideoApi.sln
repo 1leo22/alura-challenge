@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoApi", "VideoApi\VideoApi.csproj", "{D6BECFB2-35EE-4135-BE7E-C8D3A1A48EBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{1CA6D01A-5DF2-41A9-8772-3739BE2C427C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj", "{1CA6D01A-5DF2-41A9-8772-3739BE2C427C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dao", "Dao\Dao.csproj", "{1C011DC6-3757-4C05-B62E-9FC5C1763403}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dao", "Dao\Dao.csproj", "{1C011DC6-3757-4C05-B62E-9FC5C1763403}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{D7F1D511-49EB-4799-B40F-E596071E2B1B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{1C011DC6-3757-4C05-B62E-9FC5C1763403}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C011DC6-3757-4C05-B62E-9FC5C1763403}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C011DC6-3757-4C05-B62E-9FC5C1763403}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7F1D511-49EB-4799-B40F-E596071E2B1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7F1D511-49EB-4799-B40F-E596071E2B1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7F1D511-49EB-4799-B40F-E596071E2B1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7F1D511-49EB-4799-B40F-E596071E2B1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
