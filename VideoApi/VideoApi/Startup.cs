@@ -21,7 +21,7 @@ namespace VideoApi
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
-			services.AddDbContext<ApiModelContext>(options => options.UseSqlServer(Configuration.GetConnectionString());
+			services.AddDbContext<ApiModelContext>(options => options.UseSqlServer(Configuration.GetConnectionString("VideoApiConnection")));
 			services.AddControllers();
 			services.AddSwaggerGen(c =>
 			{
