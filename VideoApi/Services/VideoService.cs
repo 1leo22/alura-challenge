@@ -20,5 +20,17 @@ namespace Services
 
 			return videoList;
 		}
+
+		public Video GetVideoById(int id)
+		{
+			Video video = _videoDao.GetVideoById(id);
+
+			return video;
+		}
+
+		public void AddVideo(Video video)
+		{
+			_videoDao.AddVideo(video);
+		}
 	}
 }
