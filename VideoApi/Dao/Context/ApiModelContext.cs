@@ -7,7 +7,7 @@ namespace Dao.Context
 	{
 		public ApiModelContext(DbContextOptions<ApiModelContext> options) : base(options)
 		{
-			this.Database.Migrate();
+
 		}
 
 		public DbSet<Video> Videos { get; set; }
