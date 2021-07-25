@@ -19,13 +19,5 @@ namespace Model
 		[Required(ErrorMessage = "O campo url é obrigatório")]
 		[StringLength(128, ErrorMessage = "O campo título não pode ultrapassar 128 caracteres")]
 		public string Url { get; set; }
-
-		public Video(int id, string titulo, string descricao, string url)
-		{
-			Id = id;
-			Titulo = titulo;
-			Descricao = descricao;
-			Url = url;
-		}
 	}
 }
