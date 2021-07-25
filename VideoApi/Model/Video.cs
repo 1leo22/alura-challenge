@@ -4,6 +4,7 @@ namespace Model
 {
 	public class Video
 	{
+		[Key]
 		[Required]
 		public int Id { get; private set; }
 
