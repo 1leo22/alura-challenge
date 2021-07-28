@@ -22,5 +22,26 @@ namespace VideoApi.Controllers
 			List<Video> videoList = _videoService.GetAllVideos();
 			return Ok(videoList);
 		}
+
+		[HttpPost]
+		public IActionResult AddVideo([FromBody] Video video)
+		{
+			_videoService.AddVideo(video);
+
+			return CreatedAtAction(nameof(GetVideoById), new { video.Id }, video);
+		}
+
+		[HttpGet("{id}")]
+		public IActionResult GetVideoById(int id)
+		{
+			Video video = _videoService.GetVideoById(id);
+
+			if (video is not null)
+			{
+				return Ok(video);
+			}
+
+			return NotFound();
+		}
 	}
 }
