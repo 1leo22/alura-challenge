@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Services;
 using Services.Interfaces;
+using System;
 
 namespace VideoApi
 {
@@ -31,6 +32,8 @@ namespace VideoApi
 			{
 				c.SwaggerDoc("v1", new OpenApiInfo { Title = "VideoApi", Version = "v1" });
 			});
+
+			services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 			services.AddTransient<ApiModelContext, ApiModelContext>();
 			services.AddTransient<IVideoService, VideoService>();
