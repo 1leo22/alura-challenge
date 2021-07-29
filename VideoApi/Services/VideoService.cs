@@ -1,15 +1,16 @@
-﻿using Dao;
+﻿using Dao.Interfaces;
 using Model;
+using Services.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Services
 {
-	public class VideoService
+	public class VideoService : IVideoService
 	{
-		private readonly VideoDao _videoDao;
+		private readonly IVideoDao _videoDao;
 
-		public VideoService(VideoDao videoDao)
+		public VideoService(IVideoDao videoDao)
 		{
 			_videoDao = videoDao;
 		}

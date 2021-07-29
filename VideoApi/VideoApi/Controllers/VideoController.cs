@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Model;
-using Services;
+using Services.Interfaces;
 using System.Collections.Generic;
 
 namespace VideoApi.Controllers
@@ -9,9 +9,9 @@ namespace VideoApi.Controllers
 	[Route("api/videos")]
 	public class VideoController : ControllerBase
 	{
-		private readonly VideoService _videoService;
+		private readonly IVideoService _videoService;
 
-		public VideoController(VideoService videoService)
+		public VideoController(IVideoService videoService)
 		{
 			_videoService = videoService;
 		}

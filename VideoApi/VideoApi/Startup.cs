@@ -1,5 +1,6 @@
 ﻿using Dao;
 using Dao.Context;
+using Dao.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Services;
+using Services.Interfaces;
 
 namespace VideoApi
 {
@@ -31,8 +33,8 @@ namespace VideoApi
 			});
 
 			services.AddTransient<ApiModelContext, ApiModelContext>();
-			services.AddTransient<VideoService, VideoService>();
-			services.AddTransient<VideoDao, VideoDao>();
+			services.AddTransient<IVideoService, VideoService>();
+			services.AddTransient<IVideoDao, VideoDao>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

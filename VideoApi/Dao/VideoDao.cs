@@ -1,10 +1,11 @@
 ﻿using Dao.Context;
+using Dao.Interfaces;
 using Model;
 using System.Linq;
 
 namespace Dao
 {
-	public class VideoDao
+	public class VideoDao : IVideoDao
 	{
 		private readonly ApiModelContext _context;
 
