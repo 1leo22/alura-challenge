@@ -43,5 +43,19 @@ namespace VideoApi.Controllers
 
 			return NotFound();
 		}
+
+		[HttpDelete]
+		public IActionResult DeleteVideo(int id)
+		{
+			Video video = _videoService.GetVideoById(id);
+
+			if (video is null)
+			{
+				return NotFound();
+			}
+
+			_videoService.DeleteVideo(video);
+			return NoContent();
+		}
 	}
 }

@@ -26,7 +26,13 @@ namespace Dao
 
 		public void AddVideo(Video video)
 		{
-			_context.Add(video);
+			_context.Videos.Add(video);
+			_context.SaveChanges();
+		}
+
+		public void DeleteVideo(Video video)
+		{
+			_context.Videos.Remove(video);
 			_context.SaveChanges();
 		}
 	}
