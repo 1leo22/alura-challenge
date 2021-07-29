@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Model;
+using Model.Dto;
 using Services.Interfaces;
 using System.Collections.Generic;
 
@@ -11,9 +13,12 @@ namespace VideoApi.Controllers
 	{
 		private readonly IVideoService _videoService;
 
-		public VideoController(IVideoService videoService)
+		private readonly IMapper _mapper;
+
+		public VideoController(IVideoService videoService, IMapper mapper)
 		{
 			_videoService = videoService;
+			_mapper = mapper;
 		}
 
 		[HttpGet]
@@ -24,8 +29,9 @@ namespace VideoApi.Controllers
 		}
 
 		[HttpPost]
-		public IActionResult AddVideo([FromBody] Video video)
+		public IActionResult AddVideo([FromBody] CreateVideoDto videoDto)
 		{
+			Video video = _mapper.Map<Video>(videoDto);
 			_videoService.AddVideo(video);
 
 			return CreatedAtAction(nameof(GetVideoById), new { video.Id }, video);
@@ -55,6 +61,22 @@ namespace VideoApi.Controllers
 			}
 
 			_videoService.DeleteVideo(video);
+			return NoContent();
+		}
+
+		[HttpPut("{id}")]
+		public IActionResult UpdateVideo(int id, [FromBody] UpdateVideoDto videoDto)
+		{
+			Video video = _videoService.GetVideoById(id);
+
+			if (video is null)
+			{
+				return NotFound();
+			}
+
+			_mapper.Map(videoDto, video);
+			_videoService.UpdateVideo(video);
+
 			return NoContent();
 		}
 	}

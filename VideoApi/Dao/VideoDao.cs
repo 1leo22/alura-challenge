@@ -36,5 +36,11 @@ namespace Dao
 			_context.Videos.Remove(video);
 			_context.SaveChanges();
 		}
+
+		public void UpdateVideo(Video video)
+		{
+			_context.Videos.Update(video);
+			_context.SaveChanges();
+		}
 	}
 }

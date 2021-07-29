@@ -38,5 +38,10 @@ namespace Services
 		{
 			_videoDao.DeleteVideo(video);
 		}
+
+		public void UpdateVideo(Video video)
+		{
+			_videoDao.UpdateVideo(video);
+		}
 	}
 }

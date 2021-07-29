@@ -14,5 +14,6 @@ namespace Dao.Interfaces
 
 		public void DeleteVideo(Video video);
 
+		public void UpdateVideo(Video video);
 	}
 }

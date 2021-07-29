@@ -12,5 +12,7 @@ namespace Services.Interfaces
 		public Video GetVideoById(int id);
 
 		public void DeleteVideo(Video video);
+
+		public void UpdateVideo(Video video);
 	}
 }
