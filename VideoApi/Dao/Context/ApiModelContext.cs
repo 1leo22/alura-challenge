@@ -11,5 +11,7 @@ namespace Dao.Context
 		}
 
 		public DbSet<Video> Videos { get; set; }
+
+		public DbSet<Categoria> Categorias { get; set; }
 	}
 }

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Utilities;
 
 namespace Model
 {
@@ -11,17 +12,17 @@ namespace Model
 		[Column("id")]
 		public int Id { get; set; }
 
-		[Required(ErrorMessage = "O campo título é obrigatório")]
+		[Required(ErrorMessage = Constants.ERRO_MSG)]
 		[StringLength(128, ErrorMessage = "O campo título não pode ultrapassar 128 caracteres")]
 		[Column("titulo")]
 		public string Titulo { get; set; }
 
-		[Required(ErrorMessage = "O campo descrição é obrigatório")]
+		[Required(ErrorMessage = Constants.ERRO_MSG)]
 		[StringLength(255, ErrorMessage = "O campo título não pode ultrapassar 255 caracteres")]
 		[Column("descricao")]
 		public string Descricao { get; set; }
 
-		[Required(ErrorMessage = "O campo url é obrigatório")]
+		[Required(ErrorMessage = Constants.ERRO_MSG)]
 		[StringLength(128, ErrorMessage = "O campo título não pode ultrapassar 128 caracteres")]
 		[Column("url")]
 		public string Url { get; set; }

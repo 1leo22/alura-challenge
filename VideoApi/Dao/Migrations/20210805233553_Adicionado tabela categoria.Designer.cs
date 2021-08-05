@@ -3,14 +3,16 @@ using Dao.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Dao.Migrations
 {
     [DbContext(typeof(ApiModelContext))]
-    partial class ApiModelContextModelSnapshot : ModelSnapshot
+    [Migration("20210805233553_Adicionado tabela categoria")]
+    partial class Adicionadotabelacategoria
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
