@@ -8,40 +8,41 @@ namespace Services
 {
 	public class VideoService : IVideoService
 	{
-		private readonly IVideoDao _videoDao;
+		private readonly IAbstractDao<Video> _videoDao;
 
-		public VideoService(IVideoDao videoDao)
+		public VideoService(IAbstractDao<Video> videoDao)
 		{
 			_videoDao = videoDao;
 		}
 
 		public List<Video> GetAllVideos()
 		{
-			List<Video> videoList = _videoDao.GetAllVideosIQueryable().ToList();
+			List<Video> videoList = _videoDao.GetAll().ToList();
 
 			return videoList;
 		}
 
 		public Video GetVideoById(int id)
 		{
-			Video video = _videoDao.GetVideoById(id);
+			Video video = _videoDao.Get(id);
 
 			return video;
 		}
 
 		public void AddVideo(Video video)
 		{
-			_videoDao.AddVideo(video);
+			_videoDao.Add(video);
 		}
 
 		public void DeleteVideo(Video video)
 		{
-			_videoDao.DeleteVideo(video);
+			_videoDao.Remove(video);
 		}
 
 		public void UpdateVideo(Video video)
 		{
-			_videoDao.UpdateVideo(video);
+			_videoDao.Update(video);
 		}
+
 	}
 }

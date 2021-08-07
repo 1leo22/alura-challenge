@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Model;
 using Services;
 using Services.Interfaces;
 using System;
@@ -37,7 +38,7 @@ namespace VideoApi
 
 			services.AddTransient<ApiModelContext, ApiModelContext>();
 			services.AddTransient<IVideoService, VideoService>();
-			services.AddTransient<IVideoDao, VideoDao>();
+			services.AddTransient(typeof(IAbstractDao<Video>), typeof(VideoDao));
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
